@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<title>CWP Painting Quotes</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&family=Dancing+Script:wght@700&display=swap');
+:root{
+  --bg:#F5F3EE;--surface:#FFF;--surface2:#ECEAE4;--border:#DDD9CF;--border2:#C8C4BA;
+  --text:#1C1A17;--text2:#6A6459;--text3:#9E9890;
+  --green:#1BA3A3;--green-l:#E4F6F6;--green-t:#0D6E6E;
+  --blue:#1A4F8A;--blue-l:#E8F0FB;
+  --amber:#8B5E0A;--amber-l:#FEF3E2;
+  --red:#B91C1C;--red-l:#FEF2F2;
+  --radius:12px;--rsm:8px;
+  --shadow:0 1px 3px rgba(0,0,0,0.07),0 1px 2px rgba(0,0,0,0.04);
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.5;max-width:480px;margin:0 auto;min-height:100vh}
+.scr{display:none;min-height:100vh}.scr.on{display:block}
+/* headers */
+.hdr-main{background:var(--green);color:#fff;padding:18px 18px 14px;position:sticky;top:0;z-index:100}
+.hdr-main .bname{font-family:'DM Serif Display',serif;font-size:21px;letter-spacing:-0.3px}
+.hdr-main .btag{font-size:11px;opacity:.7;margin-top:1px}
+.hdr-light{background:var(--surface);border-bottom:1px solid var(--border);padding:12px 16px;display:flex;align-items:center;gap:10px;position:sticky;top:0;z-index:100}
+.hdr-light h2{font-size:16px;font-weight:600;flex:1}
+.bk{width:34px;height:34px;background:var(--surface2);border:none;border-radius:50%;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text);flex-shrink:0}
+.hdr-act{font-size:12px;color:var(--text3);background:none;border:none;cursor:pointer;padding:5px}
+/* layout */
+.pg{padding:16px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+hr.div{border:none;border-top:1px solid var(--border);margin:14px 0}
+/* fields */
+.fld{margin-bottom:12px}
+.fld label{display:block;font-size:11px;font-weight:600;color:var(--text2);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+.fld input,.fld select,.fld textarea{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:var(--rsm);padding:10px 12px;font-size:15px;font-family:'DM Sans',sans-serif;color:var(--text);outline:none;-webkit-appearance:none;transition:border-color .15s}
+.fld input:focus,.fld select:focus,.fld textarea:focus{border-color:var(--green)}
+.fld textarea{height:65px;resize:vertical}
+.fld select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236A6459' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:34px}
+/* buttons */
+.btn-g{width:100%;padding:13px;background:var(--green);color:#fff;border:none;border-radius:var(--radius);font-size:15px;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;margin-bottom:8px;transition:opacity .15s}
+.btn-g:active{opacity:.82}
+.btn-b{width:100%;padding:13px;background:var(--blue);color:#fff;border:none;border-radius:var(--radius);font-size:15px;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;margin-bottom:8px}
+.btn-b:active{opacity:.82}
+.btn-s{width:100%;padding:11px;background:var(--surface);color:var(--text);border:1px solid var(--border);border-radius:var(--radius);font-size:14px;font-weight:500;font-family:'DM Sans',sans-serif;cursor:pointer;margin-bottom:8px;transition:background .15s}
+.btn-s:active{background:var(--surface2)}
+.btn-add{width:100%;padding:12px;background:var(--surface);border:1px dashed var(--border2);border-radius:var(--radius);font-size:13px;color:var(--text2);cursor:pointer;margin-bottom:8px;font-family:'DM Sans',sans-serif}
+.btn-add:active{background:var(--surface2)}
+/* pills */
+.pills{display:flex;gap:6px;flex-wrap:wrap}
+.pill{padding:6px 13px;border-radius:20px;border:1px solid var(--border);font-size:12px;font-weight:500;cursor:pointer;background:var(--surface);color:var(--text);font-family:'DM Sans',sans-serif;transition:all .15s}
+.pill.on{background:var(--green);color:#fff;border-color:var(--green)}
+/* steps */
+.steps{display:flex;gap:4px;padding:12px 16px 0}
+.seg{height:3px;border-radius:2px;flex:1;background:var(--border);transition:background .3s}
+.seg.on{background:var(--green)}
+.slbls{display:flex;justify-content:space-between;padding:5px 16px 12px}
+.slbls span{font-size:10px;color:var(--text3)}
+.slbls span.on{color:var(--green);font-weight:600}
+/* home nav */
+.hgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.hcard{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px 12px;cursor:pointer;text-align:center;box-shadow:var(--shadow);transition:transform .1s;-webkit-user-select:none}
+.hcard:active{transform:scale(.97)}
+.hcard .ic{font-size:26px;margin-bottom:6px}
+.hcard .lb{font-size:13px;font-weight:600}
+.hcard .sb{font-size:11px;color:var(--text3);margin-top:2px}
+.hcard.gc{background:var(--green);border-color:var(--green)}
+.hcard.gc .lb{color:#fff}.hcard.gc .sb{color:rgba(255,255,255,.6)}
+/* cards */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;margin-bottom:10px;box-shadow:var(--shadow)}
+.card-sm{background:var(--surface2);border-radius:var(--rsm);padding:11px 13px;margin-bottom:8px}
+/* section header */
+.shdr{font-size:11px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.5px;padding:12px 0 6px;border-bottom:1px solid var(--border);margin-bottom:10px;display:flex;justify-content:space-between;align-items:center}
+/* room card */
+.room-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:13px 14px;margin-bottom:8px;box-shadow:var(--shadow)}
+.room-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.room-name{font-size:14px;font-weight:600}
+.room-cost{font-size:14px;font-weight:600;color:var(--green)}
+.rmv{background:none;border:none;font-size:22px;color:var(--text3);cursor:pointer;padding:0;line-height:1}
+.room-dims{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px}
+.dim-lbl{font-size:11px;color:var(--text2);font-weight:500;margin-bottom:3px}
+.dim-inp{width:100%;padding:8px 10px;border:1px solid var(--border);border-radius:var(--rsm);font-size:14px;font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);outline:none;text-align:right}
+.dim-inp:focus{border-color:var(--green);background:#fff}
+.room-extras{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.ext-item{text-align:center}
+.ext-item .el{font-size:10px;color:var(--text2);font-weight:500;margin-bottom:3px}
+.ext-item select{width:100%;padding:6px 4px;font-size:11px;border:1px solid var(--border);border-radius:var(--rsm);background:var(--surface);font-family:'DM Sans',sans-serif;color:var(--text);-webkit-appearance:none;text-align:center}
+.ext-item input{width:100%;padding:6px 8px;font-size:12px;border:1px solid var(--border);border-radius:var(--rsm);background:var(--bg);font-family:'DM Sans',sans-serif;color:var(--text);outline:none;text-align:center}
+.ext-item input:focus{border-color:var(--green);background:#fff}
+/* ext item cards */
+.ext-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:12px 14px;margin-bottom:7px;box-shadow:var(--shadow)}
+.ext-row{display:flex;align-items:center;gap:10px}
+.ext-name{flex:1;font-size:13px;font-weight:500}
+.ext-qty-wrap{display:flex;align-items:center;gap:6px}
+.ext-qty-wrap label{font-size:11px;color:var(--text2)}
+.ext-qty-wrap input{width:64px;padding:7px 8px;border:1px solid var(--border);border-radius:var(--rsm);font-size:13px;font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);outline:none;text-align:center}
+.ext-qty-wrap input:focus{border-color:var(--green);background:#fff}
+.ext-rate{font-size:11px;color:var(--text3);margin-top:3px}
+/* stat cards */
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+.stat{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:13px}
+.stat .sl{font-size:11px;color:var(--text2);font-weight:500;text-transform:uppercase;letter-spacing:.4px;margin-bottom:3px}
+.stat .sv{font-size:21px;font-weight:600}
+.stat .sv.gr{color:var(--green)}.stat .sv.am{color:var(--amber)}
+/* sum rows */
+.srow{display:flex;justify-content:space-between;padding:5px 0;font-size:13px;border-bottom:1px solid var(--border)}
+.srow:last-child{border-bottom:none}
+.srow.tot{font-size:15px;font-weight:600;padding-top:8px}
+.srow.muted span:first-child{color:var(--text2)}
+/* quote doc */
+.qdoc{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:12px;font-size:13px}
+.qbiz{border-bottom:2px solid var(--green);padding-bottom:12px;margin-bottom:14px}
+.qbiz-name{font-family:'DM Serif Display',serif;font-size:20px;color:var(--green)}
+.qbiz-info{font-size:11px;color:var(--text2);margin-top:3px;line-height:1.7}
+.qmeta{display:flex;justify-content:space-between;margin-bottom:12px}
+.qclient-name{font-size:15px;font-weight:700}
+.qclient-info{font-size:11px;color:var(--text2);margin-top:3px;line-height:1.6}
+.qref{text-align:right;font-size:11px;color:var(--text2);line-height:1.7}
+.qno{font-size:13px;font-weight:700;color:var(--text)}
+.qjob{background:var(--green-l);border-radius:var(--rsm);padding:9px 12px;margin-bottom:12px;font-size:12px;color:var(--green-t)}
+.qshdr{font-size:11px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.4px;border-bottom:1px solid var(--border);padding-bottom:4px;margin:12px 0 7px}
+.qitem{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid #F5F3EE;font-size:12px}
+.qitem:last-child{border-bottom:none}
+.qi-name{font-weight:500}
+.qi-det{font-size:11px;color:var(--text3);margin-top:1px}
+.qpricing{border-top:2px solid var(--border);margin-top:12px;padding-top:10px}
+.qprow{display:flex;justify-content:space-between;padding:4px 0;font-size:13px}
+.qprow.tot{font-size:16px;font-weight:700;border-top:1px solid var(--border);margin-top:5px;padding-top:9px}
+.qprow.m{color:var(--text2)}
+.qtbc{background:var(--amber-l);border-radius:var(--rsm);padding:8px 12px;font-size:11px;color:var(--amber);font-weight:500;margin-top:8px}
+.qdep{background:var(--blue-l);border-radius:var(--rsm);padding:8px 12px;font-size:11px;color:var(--blue);margin-top:8px;font-weight:500}
+.qterms{margin-top:12px;padding-top:10px;border-top:1px solid var(--border);font-size:11px;color:var(--text3);line-height:1.6}
+/* saved */
+.svcard{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:13px 15px;margin-bottom:8px;cursor:pointer;box-shadow:var(--shadow);display:flex;justify-content:space-between;align-items:flex-start}
+.svcard:active{background:var(--surface2)}
+/* badge */
+.badge{display:inline-block;font-size:10px;padding:3px 8px;border-radius:10px;font-weight:600}
+.bg{background:var(--green-l);color:var(--green-t)}.ba{background:var(--amber-l);color:var(--amber)}
+/* notice */
+.notice{border-radius:var(--rsm);padding:9px 12px;font-size:12px;font-weight:500;margin-bottom:10px}
+.notice-amber{background:var(--amber-l);color:var(--amber);border:1px solid #F5D28A}
+.notice-green{background:var(--green-l);color:var(--green-t);border:1px solid #A8CFBA}
+/* search */
+.srchwrap{padding:10px 16px;background:var(--surface);border-bottom:1px solid var(--border)}
+.srchwrap input{width:100%;padding:9px 14px;background:var(--bg);border:1px solid var(--border);border-radius:20px;font-size:14px;font-family:'DM Sans',sans-serif;color:var(--text);outline:none}
+.srchwrap input:focus{border-color:var(--green);background:#fff}
+/* exp bar */
+.expbar{background:var(--surface2);border-top:1px solid var(--border);padding:10px 16px;display:flex;gap:8px}
+.expbar button{flex:1;padding:9px;background:var(--surface);border:1px solid var(--border);border-radius:var(--rsm);font-size:12px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;color:var(--text)}
+/* toast */
+.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:var(--text);color:#fff;padding:11px 20px;border-radius:20px;font-size:13px;font-weight:500;z-index:9999;opacity:0;pointer-events:none;transition:opacity .3s;white-space:nowrap}
+.toast.show{opacity:1}
+/* picker items */
+.picker-shdr{font-size:10px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.5px;padding:10px 0 4px;border-bottom:1px solid var(--border);margin-bottom:3px}
+.pitem{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border);cursor:pointer}
+.pitem:last-child{border-bottom:none}
+.pitem:active{opacity:.6}
+.pi-n{font-size:13px;font-weight:500}
+.pi-d{font-size:11px;color:var(--text3);margin-top:1px}
+.pi-add{width:26px;height:26px;background:var(--green);border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.empty{text-align:center;padding:36px 20px;color:var(--text3);font-size:13px}
+.empty-ic{font-size:36px;margin-bottom:8px}
+</style>
+</head>
+<body>
+<div class="toast" id="toast"></div>
+
+<!-- HOME -->
+<div class="scr on" id="s-home">
+  <div class="hdr-main">
+    <div class="bname">CWP Painting</div>
+    <div class="btag">Professional Painting Services · ABN 16 782 306 505</div>
+  </div>
+  <div class="pg">
+    <div class="hgrid">
+      <div class="hcard gc" onclick="startNew()"><div class="ic">+</div><div class="lb">New quote</div><div class="sb">Start fresh</div></div>
+      <div class="hcard" onclick="go('s-saved')"><div class="ic">📁</div><div class="lb">Saved quotes</div><div class="sb" id="sv-cnt">0 saved</div></div>
+    </div>
+    <div class="hgrid">
+      <div class="hcard" onclick="go('s-rates')"><div class="ic">⚙️</div><div class="lb">Rates</div><div class="sb">Edit pricing</div></div>
+      <div class="hcard" onclick="go('s-terms')"><div class="ic">📋</div><div class="lb">Terms</div><div class="sb">T&Cs & warranty</div></div>
+    </div>
+    <div class="expbar" style="margin:0 -16px">
+      <button onclick="exportData()">⬆ Export backup</button>
+      <button onclick="document.getElementById('imp').click()">⬇ Import backup</button>
+      <input type="file" id="imp" accept=".json" style="display:none" onchange="importData(this)"/>
+    </div>
+  </div>
+</div>
+
+<!-- RATES -->
+<div class="scr" id="s-rates">
+  <div class="hdr-light"><button class="bk" onclick="go('s-home')">‹</button><h2>Rates & pricing</h2></div>
+  <div class="pg">
+    <div class="shdr">Interior — room quoter</div>
+    <div class="row2">
+      <div class="fld"><label>Gyprock rate / m²</label><input type="text" inputmode="decimal" id="r-gyp" value="9.22"/></div>
+      <div class="fld"><label>Ceiling height (m)</label><input type="text" inputmode="decimal" id="r-ch" value="2.7"/></div>
+    </div>
+    <div class="row2">
+      <div class="fld"><label>No. of coats</label><select id="r-coats"><option value="2">2 coats</option><option value="3">3 coats</option></select></div>
+      <div class="fld"><label>Paint coverage (m²/L)</label><input type="text" inputmode="decimal" id="r-cov" value="12"/></div>
+    </div>
+    <div class="shdr" style="margin-top:6px">Interior — trim rates (each)</div>
+    <div class="row2">
+      <div class="fld"><label>Door flush 2 sides</label><input type="text" inputmode="decimal" id="r-df2" value="40.68"/></div>
+      <div class="fld"><label>Door flush 1 side</label><input type="text" inputmode="decimal" id="r-df1" value="30.70"/></div>
+    </div>
+    <div class="row2">
+      <div class="fld"><label>Door panel 2 sides</label><input type="text" inputmode="decimal" id="r-dp2" value="43.26"/></div>
+      <div class="fld"><label>Door panel 1 side</label><input type="text" inputmode="decimal" id="r-dp1" value="32.43"/></div>
+    </div>
+    <div class="row2">
+      <div class="fld"><label>Window alum.</label><input type="text" inputmode="decimal" id="r-wa" value="21.17"/></div>
+      <div class="fld"><label>Window wooden poor</label><input type="text" inputmode="decimal" id="r-wwp" value="78.65"/></div>
+    </div>
+    <div class="row2">
+      <div class="fld"><label>Window wooden fair</label><input type="text" inputmode="decimal" id="r-wwf" value="60.00"/></div>
+      <div class="fld"><label>Window wooden good</label><input type="text" inputmode="decimal" id="r-wwg" value="48.40"/></div>
+    </div>
+    <div class="row2">
+      <div class="fld"><label>Architrave 2 sides</label><input type="text" inputmode="decimal" id="r-a2" value="21.17"/></div>
+      <div class="fld"><label>Architrave 1 side</label><input type="text" inputmode="decimal" id="r-a1" value="18.10"/></div>
+    </div>
+    <div class="row2">
+      <div class="fld"><label>Skirting / Lm</label><input type="text" inputmode="decimal" id="r-sk" value="0.50"/></div>
+      <div class="fld"><label>Metal door frame</label><input type="text" inputmode="decimal" id="r-mdf" value="21.17"/></div>
+    </div>
+    <div class="row2">
+      <div class="fld"><label>Lintel (each)</label><input type="text" inputmode="decimal" id="r-lin" value="12.10"/></div>
+      <div class="fld"><label>Sill (each)</label><input type="text" inputmode="decimal" id="r-sil" value="12.10"/></div>
+    </div>
+    <div class="shdr" style="margin-top:6px">Exterior rates</div>
+    <div class="row2">
+      <div class="fld"><label>Gutter / Lm</label><input type="text" inputmode="decimal" id="r-gut" value="10.60"/></div>
+      <div class="fld"><label>Fascia / Lm</label><input type="text" inputmode="decimal" id="r-fas" value="10.60"/></div>
+    </div>
+    <div class="row2">
+      <div class="fld"><label>Eaves / Lm</label><input type="text" inputmode="decimal" id="r-eav" value="13.29"/></div>
+      <div class="fld"><label>Downpipes / Lm</label><input type="text" inputmode="decimal" id="r-dwn" value="21.80"/></div>
+    </div>
+    <div class="row2">
+      <div class="fld"><label>Door ext. fair</label><input type="text" inputmode="decimal" id="r-def" value="85.00"/></div>
+      <div class="fld"><label>Door ext. poor</label><input type="text" inputmode="decimal" id="r-dep" value="135.00"/></div>
+    </div>
+    <div class="row2">
+      <div class="fld"><label>Weatherboards /m²</label><input type="text" inputmode="decimal" id="r-wb" value="40.00"/></div>
+      <div class="fld"><label>Verandah ceiling /m²</label><input type="text" inputmode="decimal" id="r-vc" value="15.00"/></div>
+    </div>
+    <div class="row2">
+      <div class="fld"><label>Window sash poor</label><input type="text" inputmode="decimal" id="r-wsp" value="75.00"/></div>
+      <div class="fld"><label>Window sash fair</label><input type="text" inputmode="decimal" id="r-wsf" value="59.40"/></div>
+    </div>
+    <div class="row2">
+      <div class="fld"><label>Window sash good</label><input type="text" inputmode="decimal" id="r-wsg" value="52.80"/></div>
+      <div class="fld"><label>Window alum. ext.</label><input type="text" inputmode="decimal" id="r-wae" value="11.38"/></div>
+    </div>
+    <div class="row2">
+      <div class="fld"><label>Posts (each)</label><input type="text" inputmode="decimal" id="r-post" value="19.80"/></div>
+      <div class="fld"><label>Metre box (each)</label><input type="text" inputmode="decimal" id="r-mb" value="30.00"/></div>
+    </div>
+    <div class="row2">
+      <div class="fld"><label>Access door (each)</label><input type="text" inputmode="decimal" id="r-ad" value="23.76"/></div>
+      <div class="fld"><label>Deck /m²</label><input type="text" inputmode="decimal" id="r-dk" value="25.00"/></div>
+    </div>
+    <div class="row2">
+      <div class="fld"><label>Dutch gable fair</label><input type="text" inputmode="decimal" id="r-dgf" value="165.00"/></div>
+      <div class="fld"><label>Dutch gable poor</label><input type="text" inputmode="decimal" id="r-dgp" value="400.00"/></div>
+    </div>
+    <div class="row2">
+      <div class="fld"><label>Waterblast (job)</label><input type="text" inputmode="decimal" id="r-wbl" value="290.00"/></div>
+      <div class="fld"><label>Stairs / day</label><input type="text" inputmode="decimal" id="r-stair" value="247.00"/></div>
+    </div>
+    <div class="row2">
+      <div class="fld"><label>Travel / km (one way)</label><input type="text" inputmode="decimal" id="r-trav" value="16.50"/></div>
+      <div class="fld"><label>Surface prep /m²</label><input type="text" inputmode="decimal" id="r-sp" value="400.00"/></div>
+    </div>
+    <div class="shdr" style="margin-top:6px">Quote settings</div>
+    <div class="row2">
+      <div class="fld"><label>GST (%)</label><input type="text" inputmode="decimal" id="r-gst" value="10"/></div>
+      <div class="fld"><label>Quote valid (days)</label><input type="text" inputmode="decimal" id="r-valid" value="30"/></div>
+    </div>
+    <div class="row2">
+      <div class="fld"><label>Deposit (%)</label><input type="text" inputmode="decimal" id="r-dep" value="30"/></div>
+      <div class="fld"><label>Premium markup (%)</label><input type="text" inputmode="decimal" id="r-prem" value="15"/></div>
+    </div>
+    <button class="btn-g" onclick="saveRates()">Save all rates</button>
+  </div>
+</div>
+
+<!-- TERMS -->
+<div class="scr" id="s-terms">
+  <div class="hdr-light"><button class="bk" onclick="go('s-home')">‹</button><h2>Terms & conditions</h2></div>
+  <div class="pg">
+    <div class="fld"><label>Terms text (shown on proposal)</label><textarea id="t-terms" style="height:160px"></textarea></div>
+    <div class="fld"><label>Warranty statement</label><input type="text" id="t-warr" placeholder="e.g. 1 year warranty on all workmanship"/></div>
+    <button class="btn-g" onclick="saveTerms()">Save terms</button>
+  </div>
+</div>
+
+<!-- NEW QUOTE -->
+<div class="scr" id="s-new">
+  <div class="hdr-light">
+    <button class="bk" onclick="go('s-home')">‹</button>
+    <h2>Quote <span id="qnhdr" style="font-size:12px;color:var(--text3);font-weight:400"></span></h2>
+    <button class="hdr-act" onclick="startNew()">Clear</button>
+  </div>
+  <div class="steps"><div class="seg on" id="sg1"></div><div class="seg" id="sg2"></div><div class="seg" id="sg3"></div><div class="seg" id="sg4"></div></div>
+  <div class="slbls"><span id="sl1" class="on">Client</span><span id="sl2">Interior</span><span id="sl3">Exterior</span><span id="sl4">Proposal</span></div>
+
+  <!-- Step 1: Client -->
+  <div id="st1" class="pg">
+    <div class="fld"><label>Ref number</label><input type="text" id="q-ref" placeholder="Auto-assigned if blank"/></div>
+    <div class="fld"><label>Client name</label><input type="text" id="q-client" placeholder="Full name" onblur="autocapName(this)"/></div>
+    <div class="fld"><label>Client phone</label><input type="tel" id="q-phone" placeholder="0400 000 000"/></div>
+    <div class="fld"><label>Client email</label><input type="email" id="q-email" placeholder="client@email.com"/></div>
+    <div class="fld"><label>Job address</label><input type="text" id="q-addr" placeholder="Street address" onblur="autocapAddr(this)"/></div>
+    <div class="row2">
+      <div class="fld"><label>City / Suburb</label><input type="text" id="q-city" placeholder="Orange" onblur="autocapName(this)"/></div>
+      <div class="fld"><label>Postcode</label><input type="text" inputmode="numeric" id="q-post" placeholder="2800"/></div>
+    </div>
+    <div class="fld"><label>Scope of work</label>
+      <select id="q-scope">
+        <option>Exterior Repaint</option>
+        <option>Interior Repaint</option>
+        <option>Interior & Exterior Repaint</option>
+        <option>Exterior New Work</option>
+        <option>Interior New Work</option>
+        <option>Interior & Exterior New Work</option>
+        <option>Interior & Exterior</option>
+        <option>Woodwork Only</option>
+        <option>Bedrooms</option>
+        <option>Kitchen</option>
+        <option>Lounge / Living</option>
+        <option>Master Bedroom</option>
+        <option>Bathroom</option>
+        <option>As Per Plan</option>
+      </select>
+    </div>
+    <div class="fld"><label>Work description</label><textarea id="q-desc" placeholder="Brief description of the job..."></textarea></div>
+    <div class="fld"><label>Job quality</label>
+      <div class="pills">
+        <button class="pill on" onclick="setQ('standard',this)">Standard</button>
+        <button class="pill" onclick="setQ('premium',this)">Premium</button>
+      </div>
+    </div>
+    <div class="notice notice-amber">Start date is TBC — confirmed once 30% deposit is received.</div>
+    <button class="btn-g" onclick="gost(2)">Next: Interior rooms →</button>
+  </div>
+
+  <!-- Step 2: Interior -->
+  <div id="st2" class="pg" style="display:none">
+    <div style="display:flex;gap:10px;align-items:flex-end;margin-bottom:12px">
+      <div class="fld" style="flex:1;margin-bottom:0"><label>Ceiling height (m)</label><input type="text" inputmode="decimal" id="q-ch" value="2.7" oninput="updateCeilHeight(this.value)"/></div>
+      <div class="fld" style="flex:1;margin-bottom:0"><label>No. of coats</label><select id="q-coats" onchange="updateCoats(this.value)"><option value="2">2 coats</option><option value="3">3 coats</option></select></div>
+    </div>
+    <div class="shdr"><span>Rooms</span><span id="int-total-live" style="font-size:12px;color:var(--green);font-weight:600">$0.00</span></div>
+    <div id="room-list"></div>
+    <button class="btn-add" onclick="addRoom()">+ Add room</button>
+    <hr class="div"/>
+    <div class="shdr">Interior trim</div>
+    <div id="trim-list"></div>
+    <button class="btn-add" onclick="go('s-trim-picker')">+ Add trim item</button>
+    <hr class="div"/>
+    <div class="fld"><label>Internal notes (not on proposal)</label><textarea id="q-inotes" placeholder="Private notes..."></textarea></div>
+    <button class="btn-g" onclick="gost(3)">Next: Exterior →</button>
+    <button class="btn-s" onclick="gost(1)">← Back</button>
+  </div>
+
+  <!-- Step 3: Exterior -->
+  <div id="st3" class="pg" style="display:none">
+    <div class="shdr"><span>Exterior items</span><span id="ext-total-live" style="font-size:12px;color:var(--green);font-weight:600">$0.00</span></div>
+    <div id="ext-list"></div>
+    <button class="btn-add" onclick="go('s-ext-picker')">+ Add exterior item</button>
+    <hr class="div"/>
+    <div class="row2">
+      <div class="fld"><label>Discount ($)</label><input type="text" inputmode="decimal" id="q-disc" value="0"/></div>
+      <div class="fld"><label>Travel km (one way)</label><input type="text" inputmode="decimal" id="q-trav" value="0"/></div>
+    </div>
+    <button class="btn-g" onclick="gost(4)">Next: Review proposal →</button>
+    <button class="btn-s" onclick="gost(2)">← Back</button>
+  </div>
+
+  <!-- Step 4: Proposal -->
+  <div id="st4" class="pg" style="display:none">
+    <div class="shdr"><span>Internal summary</span><span style="font-size:10px;color:var(--text3);font-weight:400">Not on proposal</span></div>
+    <div id="int-summary"></div>
+    <div class="shdr" style="margin-top:4px"><span>Client proposal</span><span style="font-size:10px;color:var(--text3);font-weight:400">No rates shown</span></div>
+    <div id="q-preview"></div>
+    <button class="btn-b" onclick="emailQ()">✉ Email proposal to client</button>
+    <button class="btn-s" onclick="printProposal()" style="background:var(--amber-l);border-color:#F5D28A;color:var(--amber)">🖨 View &amp; print / save as PDF</button>
+    <button class="btn-g" onclick="saveQ()">💾 Save quote</button>
+    <button class="btn-s" onclick="dupQ()">Duplicate this quote</button>
+    <button class="btn-s" onclick="gost(3)">← Back</button>
+  </div>
+</div>
+
+<!-- TRIM PICKER -->
+<div class="scr" id="s-trim-picker">
+  <div class="hdr-light"><button class="bk" onclick="go('s-new');gost(2)">‹</button><h2>Add trim item</h2></div>
+  <div class="srchwrap"><input type="text" id="trim-srch" placeholder="Search trim..." oninput="renderTrimPicker(this.value)"/></div>
+  <div class="pg" style="padding-top:8px"><div id="trim-picker-list"></div></div>
+</div>
+
+<!-- EXT PICKER -->
+<div class="scr" id="s-ext-picker">
+  <div class="hdr-light"><button class="bk" onclick="go('s-new');gost(3)">‹</button><h2>Add exterior item</h2></div>
+  <div class="srchwrap"><input type="text" id="ext-srch" placeholder="Search exterior..." oninput="renderExtPicker(this.value)"/></div>
+  <div class="pg" style="padding-top:8px"><div id="ext-picker-list"></div></div>
+</div>
+
+<!-- SAVED -->
+<div class="scr" id="s-saved">
+  <div class="hdr-light"><button class="bk" onclick="go('s-home')">‹</button><h2>Saved quotes</h2></div>
+  <div class="pg"><div id="saved-list"></div></div>
+</div>
+
+<script>
+// ── RATES ──────────────────────────────────────────────────────────────
+let R={
+  gyp:9.22,ch:2.7,coats:2,cov:12,prem:15,gst:10,valid:30,dep:30,
+  df2:40.68,df1:30.70,dp2:43.26,dp1:32.43,
+  wa:21.17,wwp:78.65,wwf:60.00,wwg:48.40,
+  a2:21.17,a1:18.10,sk:0.50,mdf:21.17,lin:12.10,sil:12.10,
+  gut:10.60,fas:10.60,eav:13.29,dwn:21.80,
+  def:85.00,dep2:135.00,wb:40.00,vc:15.00,
+  wsp:75.00,wsf:59.40,wsg:52.80,wae:11.38,
+  post:19.80,mb:30.00,ad:23.76,dk:25.00,
+  dgf:165.00,dgp:400.00,wbl:290.00,stair:247.00,trav:16.50,sp:400.00
+};
+let TERMS={
+  terms:'A deposit of 30% of the contract amount signifies authorisation to proceed with the painting work as outlined in the scope of work. The deposit amount is due upon signing this proposal, with the balance due upon completion.',
+  warr:'CWP Painting guarantees all work will be done in a professional manner, complete with a 1 year warranty on all workmanship.'
+};
+let SAVED=[];
+let qCtr=1;
+let curId=null;
+
+// ── TRIM CATALOGUE ─────────────────────────────────────────────────────
+const TRIM_CAT=[
+  {id:'df2',n:'Door flush (2 sides)',u:'each',rk:'df2'},
+  {id:'df1',n:'Door flush (1 side)',u:'each',rk:'df1'},
+  {id:'dp2',n:'Door panel (2 sides)',u:'each',rk:'dp2'},
+  {id:'dp1',n:'Door panel (1 side)',u:'each',rk:'dp1'},
+  {id:'wa',n:'Window aluminium',u:'each',rk:'wa'},
+  {id:'wwp',n:'Window wooden (poor condition)',u:'each',rk:'wwp'},
+  {id:'wwf',n:'Window wooden (fair condition)',u:'each',rk:'wwf'},
+  {id:'wwg',n:'Window wooden (good condition)',u:'each',rk:'wwg'},
+  {id:'a2',n:'Architrave (2 sides)',u:'each',rk:'a2'},
+  {id:'a1',n:'Architrave (1 side)',u:'each',rk:'a1'},
+  {id:'df',n:'Door frame (painted)',u:'each',rk:'mdf'},
+  {id:'mdf',n:'Metal door frame',u:'each',rk:'mdf'},
+  {id:'lin',n:'Lintel',u:'each',rk:'lin'},
+  {id:'sil',n:'Sill',u:'each',rk:'sil'},
+];
+const EXT_CAT=[
+  {id:'gut',n:'Gutters',u:'Lm',rk:'gut'},
+  {id:'fas',n:'Fascia',u:'Lm',rk:'fas'},
+  {id:'eav',n:'Eaves',u:'Lm',rk:'eav'},
+  {id:'dwn',n:'Downpipes',u:'Lm',rk:'dwn'},
+  {id:'def',n:'External door (fair condition)',u:'each',rk:'def'},
+  {id:'dep2',n:'External door (poor condition)',u:'each',rk:'dep2'},
+  {id:'wb',n:'Weatherboards',u:'m²',rk:'wb'},
+  {id:'vc',n:'Verandah ceiling',u:'m²',rk:'vc'},
+  {id:'wsp',n:'Wooden windows (poor)',u:'each',rk:'wsp'},
+  {id:'wsf',n:'Wooden windows (fair)',u:'each',rk:'wsf'},
+  {id:'wsg',n:'Wooden windows (good)',u:'each',rk:'wsg'},
+  {id:'wae',n:'Window aluminium (ext.)',u:'each',rk:'wae'},
+  {id:'post',n:'Posts',u:'each',rk:'post'},
+  {id:'mb',n:'Metre box',u:'each',rk:'mb'},
+  {id:'ad',n:'Access door',u:'each',rk:'ad'},
+  {id:'dk',n:'Deck',u:'m²',rk:'dk'},
+  {id:'dgf',n:'Dutch gable (fair)',u:'each',rk:'dgf'},
+  {id:'dgp',n:'Dutch gable (poor)',u:'each',rk:'dgp'},
+  {id:'wbl',n:'Waterblast',u:'job',rk:'wbl'},
+  {id:'stair',n:'Stairs',u:'day',rk:'stair'},
+  {id:'sp',n:'Surface preparation',u:'m²',rk:'sp'},
+];
+
+// ── QUOTE STATE ────────────────────────────────────────────────────────
+let Q={
+  ref:'',client:'',phone:'',email:'',addr:'',city:'Orange',post:'2800',
+  scope:'Exterior Repaint',desc:'',quality:'standard',inotes:'',
+  rooms:[],trims:[],exts:[],disc:0,travKm:0,
+  ch:null,coats:null
+};
+
+// ── HELPERS ────────────────────────────────────────────────────────────
+function go(id){
+  document.querySelectorAll('.scr').forEach(s=>s.classList.remove('on'));
+  document.getElementById(id).classList.add('on');
+  window.scrollTo(0,0);
+  if(id==='s-trim-picker')renderTrimPicker('');
+  if(id==='s-ext-picker')renderExtPicker('');
+  if(id==='s-saved')renderSaved();
+  if(id==='s-rates')loadRates();
+  if(id==='s-terms')loadTerms();
+}
+function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2400);}
+function v(id){const e=document.getElementById(id);return e?e.value.trim():'';}
+function pf(id){return parseFloat(document.getElementById(id)?.value)||0;}
+function fmt(x){return '$'+Math.abs(x).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g,',');}
+
+function toTitleCase(str){
+  return str.replace(/\b\w/g,c=>c.toUpperCase());
+}
+function toAddressCase(str){
+  // Capitalise first letter of each word, but keep unit/number prefixes clean
+  const streetTypes=['Street','Avenue','Ave','Road','Rd','Drive','Dr','Way','Place','Pl','Court','Ct','Close','Cl','Lane','Ln','Crescent','Cres','Boulevard','Blvd','Terrace','Tce','Circuit','Cct','Highway','Hwy','Parade','Pde','Grove','Gr','Rise','Run','Loop','Track','Trail','Mews','Walk','Square','Sq'];
+  return str.replace(/\b\w+/g,word=>{
+    const match=streetTypes.find(t=>t.toLowerCase()===word.toLowerCase());
+    if(match) return match;
+    return word.charAt(0).toUpperCase()+word.slice(1);
+  });
+}
+function autocapName(el){el.value=toTitleCase(el.value);}
+function autocapAddr(el){el.value=toAddressCase(el.value);}
+function setQ(val,btn){Q.quality=val;document.querySelectorAll('#st1 .pill').forEach(p=>p.classList.remove('on'));btn.classList.add('on');}
+
+// ── ROOM MATHS ─────────────────────────────────────────────────────────
+function calcRoom(rm){
+  const l=rm.len||0,w=rm.wid||0;
+  const perim=2*(l+w);
+  const ceil=l*w;
+  const ch=Q.ch||R.ch;
+  const walls=perim*ch - (rm.doors||0)*2 - (rm.wins||0)*1.5;
+  const wallsPos=Math.max(0,walls);
+  const coats=Q.coats||R.coats;
+  let cost=(ceil+wallsPos)*R.gyp*coats;
+  if(Q.quality==='premium') cost*=(1+R.prem/100);
+  const skirtCost=perim*R.sk;
+  const dframeCost=(rm.dframes||0)*R.mdf;
+  cost+=skirtCost+dframeCost;
+  const paintL=((ceil+wallsPos)*coats)/R.cov;
+  return{perim,ceil,walls:wallsPos,cost,skirtCost,dframeCost,paintL};
+}
+function roomCost(rm){return calcRoom(rm).cost;}
+function updateCeilHeight(val){Q.ch=parseFloat(val)||R.ch;renderRooms();}
+function updateCoats(val){Q.coats=parseInt(val)||R.coats;renderRooms();}
+
+// ── TRIM MATHS ─────────────────────────────────────────────────────────
+function trimCost(t){return (t.qty||0)*R[t.rk];}
+function extCost(e){return (e.qty||0)*R[e.rk];}
+
+// ── TOTALS ─────────────────────────────────────────────────────────────
+function calcTotals(){
+  const intC=Q.rooms.reduce((a,r)=>a+roomCost(r),0);
+  const trimC=Q.trims.reduce((a,t)=>a+trimCost(t),0);
+  const extC=Q.exts.reduce((a,e)=>a+extCost(e),0);
+  const travC=(Q.travKm||0)*R.trav*2;
+  const sub=Math.max(0,intC+trimC+extC+travC-(Q.disc||0));
+  const gst=sub*R.gst/100;
+  const total=sub+gst;
+  const deposit=total*R.dep/100;
+  const balance=total-deposit;
+  return{intC,trimC,extC,travC,sub,gst,total,deposit,balance};
+}
+
+// ── STEP NAV ────────────────────────────────────────────────────────────
+function gost(n){
+  if(n===2){
+    Q.ref=v('q-ref');Q.client=v('q-client');Q.phone=v('q-phone');Q.email=v('q-email');
+    Q.addr=v('q-addr');Q.city=v('q-city');Q.post=v('q-post');
+    Q.scope=v('q-scope');Q.desc=v('q-desc');Q.inotes='';
+  }
+  if(n===3){Q.inotes=v('q-inotes');}
+  if(n===4){
+    Q.disc=parseFloat(v('q-disc'))||0;
+    Q.travKm=parseFloat(v('q-trav'))||0;
+    renderSummary();renderPreview();
+  }
+  [1,2,3,4].forEach(i=>{
+    document.getElementById('st'+i).style.display=i===n?'block':'none';
+    document.getElementById('sg'+i).classList.toggle('on',i<=n);
+    document.getElementById('sl'+i).classList.toggle('on',i===n);
+  });
+  if(n===2){
+    const chEl=document.getElementById('q-ch');
+    const coatsEl=document.getElementById('q-coats');
+    if(chEl) chEl.value=Q.ch||R.ch;
+    if(coatsEl) coatsEl.value=Q.coats||R.coats;
+    renderRooms();renderTrims();
+  }
+  if(n===3){renderExts();}
+  window.scrollTo(0,0);
+}
+
+function startNew(){
+  Q={ref:'',client:'',phone:'',email:'',addr:'',city:'Orange',post:'2800',scope:'Exterior Repaint',desc:'',quality:'standard',inotes:'',rooms:[],trims:[],exts:[],disc:0,travKm:0};
+  curId=null;
+  document.getElementById('qnhdr').textContent='#'+qCtr;
+  go('s-new');gost(1);
+  ['q-ref','q-client','q-phone','q-email','q-addr','q-desc'].forEach(id=>{const e=document.getElementById(id);if(e)e.value='';});
+  document.getElementById('q-city').value='Orange';
+  document.getElementById('q-post').value='2800';
+  Q.ch=R.ch;Q.coats=R.coats;
+  const chEl=document.getElementById('q-ch');if(chEl)chEl.value=R.ch;
+  const coEl=document.getElementById('q-coats');if(coEl)coEl.value=R.coats;
+  document.getElementById('q-scope').value='Exterior Repaint';
+  document.getElementById('q-disc').value='0';
+  document.getElementById('q-trav').value='0';
+  document.querySelectorAll('#st1 .pill').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('#st1 .pill')[0].classList.add('on');
+}
+
+// ── ROOMS ──────────────────────────────────────────────────────────────
+const ROOM_NAMES=['Lounge','Living Room','Dining','Kitchen','Master Bedroom','Bedroom 2','Bedroom 3','Bedroom 4','Bathroom','Ensuite','Hallway','Study','Laundry','Other'];
+function addRoom(){
+  Q.rooms.push({name:'Lounge',len:0,wid:0,doors:0,wins:0,skirts:0,archs:0,dframes:0});
+  renderRooms();
+}
+function removeRoom(i){Q.rooms.splice(i,1);renderRooms();}
+function updateRoom(i,k,val){
+  Q.rooms[i][k]=k==='name'?val:(parseFloat(val)||0);
+  updateRoomDisplay(i);
+}
+function updateRoomDisplay(i){
+  const rm=Q.rooms[i];
+  const c=roomCost(rm);
+  const cd=document.getElementById('rc-'+i);
+  if(cd)cd.textContent=fmt(c);
+  updateIntLive();
+}
+function updateIntLive(){
+  const t=Q.rooms.reduce((a,r)=>a+roomCost(r),0)+Q.trims.reduce((a,t)=>a+trimCost(t),0);
+  const el=document.getElementById('int-total-live');
+  if(el)el.textContent=fmt(t);
+}
+function renderRooms(){
+  const el=document.getElementById('room-list');
+  if(!Q.rooms.length){el.innerHTML='<div style="text-align:center;color:var(--text3);padding:12px 0;font-size:13px">No rooms yet. Tap below to add.</div>';updateIntLive();return;}
+  el.innerHTML=Q.rooms.map((rm,i)=>`
+    <div class="room-card">
+      <div class="room-top">
+        <select style="font-size:13px;font-weight:600;background:none;border:none;padding:0;font-family:'DM Sans',sans-serif;color:var(--text);outline:none;cursor:pointer;max-width:160px" onchange="updateRoom(${i},'name',this.value)">
+          ${ROOM_NAMES.map(n=>`<option${n===rm.name?' selected':''}>${n}</option>`).join('')}
+        </select>
+        <div style="display:flex;align-items:center;gap:8px">
+          <span class="room-cost" id="rc-${i}">${fmt(roomCost(rm))}</span>
+          <button class="rmv" onclick="removeRoom(${i})">×</button>
+        </div>
+      </div>
+      <div class="room-dims">
+        <div><div class="dim-lbl">Length (m)</div><input class="dim-inp" type="text" inputmode="decimal" value="${rm.len||''}" placeholder="0" oninput="updateRoom(${i},'len',this.value)"/></div>
+        <div><div class="dim-lbl">Width (m)</div><input class="dim-inp" type="text" inputmode="decimal" value="${rm.wid||''}" placeholder="0" oninput="updateRoom(${i},'wid',this.value)"/></div>
+      </div>
+      <div class="room-extras">
+        <div class="ext-item"><div class="el">Doors</div><input type="text" inputmode="numeric" value="${rm.doors||''}" placeholder="0" oninput="updateRoom(${i},'doors',this.value)"/></div>
+        <div class="ext-item"><div class="el">Windows</div><input type="text" inputmode="numeric" value="${rm.wins||''}" placeholder="0" oninput="updateRoom(${i},'wins',this.value)"/></div>
+        <div class="ext-item"><div class="el">Skirt (auto)</div><div style="font-size:12px;font-weight:500;color:var(--green);text-align:center;padding:6px 0">${calcRoom(rm).perim.toFixed(1)}Lm</div></div>
+      </div>
+      <div class="room-extras" style="margin-top:6px">
+        <div class="ext-item"><div class="el">Door frames</div><input type="text" inputmode="numeric" value="${rm.dframes||''}" placeholder="0" oninput="updateRoom(${i},'dframes',this.value)"/></div>
+      </div>
+      <div style="font-size:11px;color:var(--text3);margin-top:8px">
+        ${(()=>{const c=calcRoom(rm);return `Ceiling ${c.ceil.toFixed(1)}m² · Walls ${c.walls.toFixed(1)}m² · Skirting ${c.perim.toFixed(1)}Lm${rm.dframes?' · '+rm.dframes+' door frames':''} · Paint ~${c.paintL.toFixed(1)}L`;})()}
+      </div>
+    </div>
+  `).join('');
+  updateIntLive();
+}
+
+// ── TRIM ───────────────────────────────────────────────────────────────
+function renderTrims(){
+  const el=document.getElementById('trim-list');
+  if(!Q.trims.length){el.innerHTML='';return;}
+  el.innerHTML=Q.trims.map((t,i)=>`
+    <div class="ext-card">
+      <div class="ext-row">
+        <div style="flex:1"><div class="ext-name">${t.n}</div><div class="ext-rate">${fmt(R[t.rk])} / ${t.u}</div></div>
+        <div class="ext-qty-wrap"><label>Qty</label><input type="text" inputmode="decimal" value="${t.qty||''}" placeholder="0" oninput="updateTrim(${i},this.value)"/></div>
+        <button class="rmv" style="margin-left:8px" onclick="removeTrim(${i})">×</button>
+      </div>
+    </div>
+  `).join('');
+}
+function removeTrim(i){Q.trims.splice(i,1);renderTrims();updateIntLive();}
+function updateTrim(i,val){Q.trims[i].qty=parseFloat(val)||0;updateIntLive();}
+function renderTrimPicker(f){
+  const el=document.getElementById('trim-picker-list');
+  const items=f?TRIM_CAT.filter(t=>t.n.toLowerCase().includes(f.toLowerCase())):TRIM_CAT;
+  if(!items.length){el.innerHTML='<div class="empty">No results</div>';return;}
+  el.innerHTML=items.map(t=>`
+    <div class="pitem" onclick="pickTrim('${t.id}')">
+      <div><div class="pi-n">${t.n}</div><div class="pi-d">${fmt(R[t.rk])} / ${t.u}</div></div>
+      <div class="pi-add">+</div>
+    </div>
+  `).join('');
+}
+function pickTrim(id){
+  const t=TRIM_CAT.find(x=>x.id===id);
+  if(!t)return;
+  const existing=Q.trims.find(x=>x.id===id);
+  if(existing){existing.qty=(existing.qty||0)+1;}
+  else Q.trims.push({...t,qty:1});
+  go('s-new');gost(2);
+  toast('Added: '+t.n);
+}
+
+// ── EXTERIOR ───────────────────────────────────────────────────────────
+function renderExts(){
+  const el=document.getElementById('ext-list');
+  const live=document.getElementById('ext-total-live');
+  const tot=Q.exts.reduce((a,e)=>a+extCost(e),0)+(parseFloat(v('q-trav'))||0)*R.trav*2;
+  if(live)live.textContent=fmt(tot);
+  if(!Q.exts.length){el.innerHTML='<div style="text-align:center;color:var(--text3);padding:12px 0;font-size:13px">No exterior items yet.</div>';return;}
+  el.innerHTML=Q.exts.map((e,i)=>`
+    <div class="ext-card">
+      <div class="ext-row">
+        <div style="flex:1"><div class="ext-name">${e.n}</div><div class="ext-rate">${fmt(R[e.rk])} / ${e.u}</div></div>
+        <div class="ext-qty-wrap"><label>Qty</label><input type="text" inputmode="decimal" value="${e.qty||''}" placeholder="0" oninput="updateExt(${i},this.value)"/></div>
+        <button class="rmv" style="margin-left:8px" onclick="removeExt(${i})">×</button>
+      </div>
+    </div>
+  `).join('');
+}
+function removeExt(i){Q.exts.splice(i,1);renderExts();}
+function updateExt(i,val){Q.exts[i].qty=parseFloat(val)||0;const live=document.getElementById('ext-total-live');const tot=Q.exts.reduce((a,e)=>a+extCost(e),0);if(live)live.textContent=fmt(tot);}
+function renderExtPicker(f){
+  const el=document.getElementById('ext-picker-list');
+  const items=f?EXT_CAT.filter(e=>e.n.toLowerCase().includes(f.toLowerCase())):EXT_CAT;
+  if(!items.length){el.innerHTML='<div class="empty">No results</div>';return;}
+  el.innerHTML=items.map(e=>`
+    <div class="pitem" onclick="pickExt('${e.id}')">
+      <div><div class="pi-n">${e.n}</div><div class="pi-d">${fmt(R[e.rk])} / ${e.u}</div></div>
+      <div class="pi-add">+</div>
+    </div>
+  `).join('');
+}
+function pickExt(id){
+  const e=EXT_CAT.find(x=>x.id===id);
+  if(!e)return;
+  const existing=Q.exts.find(x=>x.id===id);
+  if(existing){existing.qty=(existing.qty||0)+1;}
+  else Q.exts.push({...e,qty:1});
+  go('s-new');gost(3);
+  toast('Added: '+e.n);
+}
+
+// ── SUMMARY & PREVIEW ──────────────────────────────────────────────────
+function renderSummary(){
+  const t=calcTotals();
+  const el=document.getElementById('int-summary');
+  const pct=t.sub>0?((t.sub-t.sub*0.7)/t.sub*100):0;
+  el.innerHTML=`
+    <div class="stats">
+      <div class="stat"><div class="sl">Interior total</div><div class="sv">${fmt(t.intC+t.trimC)}</div></div>
+      <div class="stat"><div class="sl">Exterior total</div><div class="sv">${fmt(t.extC+t.travC)}</div></div>
+      <div class="stat"><div class="sl">Total ex GST</div><div class="sv">${fmt(t.sub)}</div></div>
+      <div class="stat"><div class="sl">Total inc GST</div><div class="sv gr">${fmt(t.total)}</div></div>
+    </div>
+    <div class="card">
+      <div class="srow muted"><span>Interior rooms</span><span>${fmt(t.intC)}</span></div>
+      <div class="srow muted"><span>Interior trim</span><span>${fmt(t.trimC)}</span></div>
+      <div class="srow muted"><span>Exterior items</span><span>${fmt(t.extC)}</span></div>
+      ${t.travC>0?`<div class="srow muted"><span>Travel (${Q.travKm}km × 2)</span><span>${fmt(t.travC)}</span></div>`:''}
+      ${Q.disc>0?`<div class="srow muted"><span>Discount</span><span>-${fmt(Q.disc)}</span></div>`:''}
+      <div class="srow tot"><span>Subtotal ex GST</span><span>${fmt(t.sub)}</span></div>
+      <div class="srow muted"><span>GST (${R.gst}%)</span><span>${fmt(t.gst)}</span></div>
+      <div class="srow tot"><span>TOTAL</span><span>${fmt(t.total)}</span></div>
+      <div style="margin-top:10px;padding-top:10px;border-top:1px solid var(--border)">
+        <div class="srow muted"><span>Deposit (${R.dep}%)</span><span>${fmt(t.deposit)}</span></div>
+        <div class="srow muted"><span>Balance on completion</span><span>${fmt(t.balance)}</span></div>
+      </div>
+    </div>
+    ${Q.inotes?`<div class="card-sm" style="font-size:12px;color:var(--text2)"><strong>Notes:</strong> ${Q.inotes}</div>`:''}
+  `;
+}
+
+function renderPreview(){
+  const t=calcTotals();
+  const today=new Date().toLocaleDateString('en-AU',{day:'numeric',month:'long',year:'numeric'});
+  const validD=new Date(Date.now()+R.valid*864e5).toLocaleDateString('en-AU',{day:'numeric',month:'long',year:'numeric'});
+  const yr=new Date().getFullYear().toString().slice(-2);const refNo=Q.ref||((curId||qCtr).toString()+'-'+yr);
+  // Build scope rows
+  let scopeHtml='';
+  if(Q.rooms.length){
+    scopeHtml+=`<div class="qshdr">Interior — rooms</div>`;
+    Q.rooms.forEach(rm=>{
+      const c=calcRoom(rm);
+      scopeHtml+=`<div class="qitem"><div><div class="qi-name">${rm.name}</div></div><div style="font-size:11px;color:var(--text3);text-align:right">${Q.quality==='premium'?'Premium':'Standard'}</div></div>`;
+    });
+  }
+  if(Q.trims.length){
+    scopeHtml+=`<div class="qshdr">Interior — trim</div>`;
+    Q.trims.forEach(t=>{scopeHtml+=`<div class="qitem"><div class="qi-name">${t.n}</div></div>`;});
+  }
+  if(Q.exts.length){
+    scopeHtml+=`<div class="qshdr">Exterior</div>`;
+    Q.exts.forEach(e=>{scopeHtml+=`<div class="qitem"><div class="qi-name">${e.n}</div></div>`;});
+  }
+  if(Q.travKm>0) scopeHtml+=`<div class="qshdr">Additional</div><div class="qitem"><div class="qi-name">Travel</div><div class="qi-det">${Q.travKm}km one way</div></div>`;
+  if(!scopeHtml) scopeHtml='<div style="color:var(--text3);font-size:12px;padding:10px 0">No items added.</div>';
+
+  document.getElementById('q-preview').innerHTML=`
+  <div class="qdoc">
+    <div class="qbiz">
+      <div class="qbiz-name">CWP Painting</div>
+      <div class="qbiz-info">0429 629 559 · kevin@cwppainting.com\nhttps://cwppainting.com/\n65 Matthews Ave, Orange NSW 2800</div>
+    </div>
+    <div class="qmeta">
+      <div>
+        <div class="qclient-name">${Q.client||'Client Name'}</div>
+        <div class="qclient-info">${[Q.phone,Q.email,Q.addr,[Q.city,Q.post].filter(Boolean).join(' ')].filter(Boolean).join('\n')}</div>
+      </div>
+      <div class="qref">
+        <div class="qno">Ref #${refNo}</div>
+        <div>Date: ${today}</div>
+        <div>Valid: ${validD}</div>
+      </div>
+    </div>
+    ${Q.scope||Q.desc?`<div class="qjob">${[Q.scope,Q.desc].filter(Boolean).join(' — ')}</div>`:''}
+    <div style="font-size:13px;font-weight:600;margin-bottom:4px">Scope of works</div>
+    ${scopeHtml}
+    <div class="qpricing">
+      <div class="qprow m"><span>Subtotal (ex GST)</span><span>${fmt(t.sub)}</span></div>
+      <div class="qprow m"><span>GST (${R.gst}%)</span><span>${fmt(t.gst)}</span></div>
+      ${Q.disc>0?`<div class="qprow m"><span>Discount</span><span>-${fmt(Q.disc)}</span></div>`:''}
+      <div class="qprow tot"><span>Total</span><span>${fmt(t.total)}</span></div>
+    </div>
+    <div class="qtbc">Start date: TBC — confirmed once ${R.dep}% deposit is received (${fmt(t.deposit)})</div>
+    <div class="qdep">Balance due on completion: ${fmt(t.balance)}</div>
+    ${TERMS.terms?`<div class="qterms">${TERMS.terms}</div>`:''}
+    ${TERMS.warr?`<div class="qterms" style="margin-top:6px;font-style:italic">${TERMS.warr}</div>`:''}
+  </div>`;
+}
+
+// ── EMAIL ──────────────────────────────────────────────────────────────
+function emailQ(){
+  const t=calcTotals();
+  const today=new Date().toLocaleDateString('en-AU',{day:'numeric',month:'long',year:'numeric'});
+  const validD=new Date(Date.now()+R.valid*864e5).toLocaleDateString('en-AU',{day:'numeric',month:'long',year:'numeric'});
+  const yr=new Date().getFullYear().toString().slice(-2);const refNo=Q.ref||((curId||qCtr).toString()+'-'+yr);
+  let scope='';
+  if(Q.rooms.length){scope+='\nINTERIOR — ROOMS\n';Q.rooms.forEach(rm=>{const c=calcRoom(rm);scope+=`  • ${rm.name}\n`;});}
+  if(Q.trims.length){scope+='\nINTERIOR — TRIM\n';Q.trims.forEach(t=>{scope+=`  • ${t.n}\n`;});}
+  if(Q.exts.length){scope+='\nEXTERIOR\n';Q.exts.forEach(e=>{scope+=`  • ${e.n}\n`;});}
+  if(Q.travKm>0) scope+=`\nADDITIONAL\n  • Travel: ${Q.travKm}km one way\n`;
+  const body=encodeURIComponent(`========================================
+CWP PAINTING
+========================================
+Professional Painting Services
+ABN 16 782 306 505
+0429 629 559  |  kevin@cwppainting.com
+https://cwppainting.com/
+65 Matthews Ave, Orange NSW 2800
+________________________________________
+
+Hi ${Q.client?Q.client.split(' ')[0]:'there'},
+
+Thank you for the opportunity to submit a proposal for your upcoming project.
+
+If you have any questions or would like to discuss specific details, please feel free to call me at your convenience. We are eager to ensure our proposal aligns with your expectations.
+
+We look forward to working with you.
+
+PROPOSAL\nRef: #${refNo}\nDate: ${today}\nValid until: ${validD}\nClient: ${Q.client||'—'}\nAddress: ${[Q.addr,Q.city,Q.post].filter(Boolean).join(', ')||'—'}\nScope: ${Q.scope||'—'}\n${Q.desc?'Description: '+Q.desc+'\n':''}Quality: ${Q.quality==='premium'?'Premium':'Standard'}\n\nSCOPE OF WORKS\n${scope}\nPRICING\nSubtotal (ex GST): ${fmt(t.sub)}\nGST (${R.gst}%): ${fmt(t.gst)}\n${Q.disc>0?'Discount: -'+fmt(Q.disc)+'\n':''}TOTAL: ${fmt(t.total)}\n\nStart date: TBC — confirmed once ${R.dep}% deposit received (${fmt(t.deposit)})\nBalance due on completion: ${fmt(t.balance)}\n\n${TERMS.terms}\n\n${TERMS.warr}\n\nPlease don't hesitate to contact me with any questions.\n\nKind regards,\nCWP Painting\n0429 629 559`);
+  const subj=encodeURIComponent(`Painting Proposal #${refNo} — ${Q.addr||Q.client||'Your Property'}`);
+  window.location.href=`mailto:${encodeURIComponent(Q.email||'')}?subject=${subj}&body=${body}&reply-to=${encodeURIComponent('kevin@cwppainting.com')}`;
+}
+
+// ── SAVE/LOAD ──────────────────────────────────────────────────────────
+function saveQ(){
+  const t=calcTotals();
+  const id=curId||qCtr;
+  const rec={id,date:new Date().toLocaleDateString('en-AU'),client:Q.client,addr:[Q.addr,Q.city].filter(Boolean).join(', '),total:t.total,data:JSON.parse(JSON.stringify(Q))};
+  const idx=SAVED.findIndex(x=>x.id===id);
+  if(idx>=0)SAVED[idx]=rec;
+  else{SAVED.unshift(rec);if(!curId){curId=id;qCtr++;}}
+  persist();
+  document.getElementById('sv-cnt').textContent=SAVED.length+' saved';
+  document.getElementById('qnhdr').textContent='#'+id;
+  toast('Quote #'+id+' saved!');
+}
+function dupQ(){Q=JSON.parse(JSON.stringify(Q));curId=null;document.getElementById('qnhdr').textContent='#'+qCtr;toast('Duplicated as #'+qCtr);}
+function renderSaved(){
+  const el=document.getElementById('saved-list');
+  if(!SAVED.length){el.innerHTML='<div class="empty"><div class="empty-ic">📂</div>No saved quotes yet.</div>';return;}
+  el.innerHTML=SAVED.map(q=>`
+    <div class="svcard" onclick="loadQ(${q.id})">
+      <div>
+        <div style="font-size:14px;font-weight:600">${q.client||'Unnamed'} <span style="font-size:12px;color:var(--text3);font-weight:400">#${q.id}</span></div>
+        <div style="font-size:12px;color:var(--text2);margin-top:2px">${q.addr||'No address'}</div>
+        <div style="font-size:11px;color:var(--text3);margin-top:2px">${q.date}</div>
+      </div>
+      <div style="text-align:right">
+        <div style="font-size:16px;font-weight:700">${fmt(q.total)}</div>
+      </div>
+    </div>
+  `).join('');
+}
+function loadQ(id){
+  const rec=SAVED.find(x=>x.id===id);if(!rec)return;
+  Q=JSON.parse(JSON.stringify(rec.data));curId=id;
+  go('s-new');
+  document.getElementById('qnhdr').textContent='#'+id;
+  document.getElementById('q-ref').value=Q.ref||'';
+  document.getElementById('q-client').value=Q.client||'';
+  document.getElementById('q-phone').value=Q.phone||'';
+  document.getElementById('q-email').value=Q.email||'';
+  document.getElementById('q-addr').value=Q.addr||'';
+  document.getElementById('q-city').value=Q.city||'Orange';
+  document.getElementById('q-post').value=Q.post||'2800';
+  document.getElementById('q-scope').value=Q.scope||'Exterior Repaint';
+  document.getElementById('q-desc').value=Q.desc||'';
+  document.getElementById('q-disc').value=Q.disc||0;
+  document.getElementById('q-trav').value=Q.travKm||0;
+  const _chEl=document.getElementById('q-ch');if(_chEl)_chEl.value=Q.ch||R.ch;
+  const _coEl=document.getElementById('q-coats');if(_coEl)_coEl.value=Q.coats||R.coats;
+  document.querySelectorAll('#st1 .pill').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('#st1 .pill')[Q.quality==='premium'?1:0].classList.add('on');
+  gost(4);
+}
+
+// ── RATES / TERMS FORMS ────────────────────────────────────────────────
+function loadRates(){
+  const map={gyp:'r-gyp',ch:'r-ch',coats:'r-coats',cov:'r-cov',prem:'r-prem',gst:'r-gst',valid:'r-valid','dep':'r-dep',
+    df2:'r-df2',df1:'r-df1',dp2:'r-dp2',dp1:'r-dp1',wa:'r-wa',wwp:'r-wwp',wwf:'r-wwf',wwg:'r-wwg',
+    a2:'r-a2',a1:'r-a1',sk:'r-sk',mdf:'r-mdf',lin:'r-lin',sil:'r-sil',
+    gut:'r-gut',fas:'r-fas',eav:'r-eav',dwn:'r-dwn',def:'r-def',dep2:'r-dep',
+    wb:'r-wb',vc:'r-vc',wsp:'r-wsp',wsf:'r-wsf',wsg:'r-wsg',wae:'r-wae',
+    post:'r-post',mb:'r-mb',ad:'r-ad',dk:'r-dk',dgf:'r-dgf',dgp:'r-dgp',
+    wbl:'r-wbl',stair:'r-stair',trav:'r-trav',sp:'r-sp'};
+  Object.entries(R).forEach(([k,val])=>{
+    const elid=map[k];if(!elid)return;
+    const el=document.getElementById(elid);if(!el)return;
+    if(el.tagName==='SELECT')el.value=val;else el.value=val;
+  });
+}
+function saveRates(){
+  R.gyp=pf('r-gyp');R.ch=pf('r-ch');R.coats=parseInt(document.getElementById('r-coats').value)||2;
+  R.cov=pf('r-cov');R.prem=pf('r-prem');R.gst=pf('r-gst');R.valid=pf('r-valid');R.dep=pf('r-dep');
+  R.df2=pf('r-df2');R.df1=pf('r-df1');R.dp2=pf('r-dp2');R.dp1=pf('r-dp1');
+  R.wa=pf('r-wa');R.wwp=pf('r-wwp');R.wwf=pf('r-wwf');R.wwg=pf('r-wwg');
+  R.a2=pf('r-a2');R.a1=pf('r-a1');R.sk=pf('r-sk');R.mdf=pf('r-mdf');R.lin=pf('r-lin');R.sil=pf('r-sil');
+  R.gut=pf('r-gut');R.fas=pf('r-fas');R.eav=pf('r-eav');R.dwn=pf('r-dwn');
+  R.def=pf('r-def');R.dep2=pf('r-dep');R.wb=pf('r-wb');R.vc=pf('r-vc');
+  R.wsp=pf('r-wsp');R.wsf=pf('r-wsf');R.wsg=pf('r-wsg');R.wae=pf('r-wae');
+  R.post=pf('r-post');R.mb=pf('r-mb');R.ad=pf('r-ad');R.dk=pf('r-dk');
+  R.dgf=pf('r-dgf');R.dgp=pf('r-dgp');R.wbl=pf('r-wbl');R.stair=pf('r-stair');R.trav=pf('r-trav');R.sp=pf('r-sp');
+  persist();go('s-home');toast('Rates saved');
+}
+function loadTerms(){document.getElementById('t-terms').value=TERMS.terms;document.getElementById('t-warr').value=TERMS.warr;}
+function saveTerms(){TERMS.terms=v('t-terms');TERMS.warr=v('t-warr');persist();go('s-home');toast('Terms saved');}
+
+// ── STORAGE ────────────────────────────────────────────────────────────
+function persist(){try{localStorage.setItem('cwp_data',JSON.stringify({R,TERMS,SAVED,qCtr}));}catch(e){}}
+function restore(){
+  try{
+    const d=localStorage.getItem('cwp_data');if(!d)return;
+    const p=JSON.parse(d);
+    if(p.R)Object.assign(R,p.R);
+    if(p.TERMS)TERMS=p.TERMS;
+    if(p.SAVED)SAVED=p.SAVED;
+    if(p.qCtr)qCtr=p.qCtr;
+    document.getElementById('sv-cnt').textContent=SAVED.length+' saved';
+  }catch(e){}
+}
+function exportData(){
+  const blob=new Blob([JSON.stringify({R,TERMS,SAVED,qCtr},null,2)],{type:'application/json'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');a.href=url;a.download='CWP_Quotes_backup_'+new Date().toISOString().slice(0,10)+'.json';a.click();URL.revokeObjectURL(url);
+  toast('Backup exported!');
+}
+function importData(input){
+  const file=input.files[0];if(!file)return;
+  const reader=new FileReader();
+  reader.onload=e=>{
+    try{
+      const p=JSON.parse(e.target.result);
+      if(p.R)Object.assign(R,p.R);
+      if(p.TERMS)TERMS=p.TERMS;
+      if(p.SAVED)SAVED=p.SAVED;
+      if(p.qCtr)qCtr=p.qCtr;
+      persist();document.getElementById('sv-cnt').textContent=SAVED.length+' saved';
+      toast('Backup imported!');
+    }catch(err){alert('Invalid backup file.');}
+  };
+  reader.readAsText(file);input.value='';
+}
+restore();
+
+function printProposal(){
+  const t=calcTotals();
+  const today=new Date().toLocaleDateString('en-AU',{day:'numeric',month:'long',year:'numeric'});
+  const validD=new Date(Date.now()+R.valid*864e5).toLocaleDateString('en-AU',{day:'numeric',month:'long',year:'numeric'});
+  const yr=new Date().getFullYear().toString().slice(-2);
+  const refNo=Q.ref||((curId||qCtr).toString()+'-'+yr);
+  const coatCount=Q.coats||R.coats;
+
+  // Build scope rows
+  let scopeRows='';
+  if(Q.rooms.length){
+    Q.rooms.forEach(rm=>{
+      scopeRows+=`<tr><td>${rm.name}</td><td>Ceiling, Walls, Woodwork, Skirting</td><td style="text-align:center">${coatCount}</td></tr>`;
+    });
+  }
+  if(Q.trims.length){
+    Q.trims.forEach(t=>{scopeRows+=`<tr><td>${t.n}</td><td>As described</td><td style="text-align:center">${coatCount}</td></tr>`;});
+  }
+  if(Q.exts.length){
+    Q.exts.forEach(e=>{scopeRows+=`<tr><td>${e.n}</td><td>As described</td><td style="text-align:center">${coatCount}</td></tr>`;});
+  }
+  if(Q.travKm>0) scopeRows+=`<tr><td>Travel</td><td>${Q.travKm}km one way</td><td style="text-align:center">—</td></tr>`;
+
+  const specItems = Q.quality==='premium'
+    ? ['Premium paints to be used on all surfaces','All painted surfaces to be sanded','Surface preparation and patching included as necessary','Gaps to be filled with suitable flexible sealant (e.g. No More Gaps)','Holes, cracks and gaps to be filled with appropriate filler','3 colour system: 1 for ceiling, 1 for walls, 1 for woodwork']
+    : ['Quality trade paints to be used on all surfaces','All painted surfaces to be sanded','Surface preparation and patching included as necessary','Gaps to be filled with suitable flexible sealant','3 colour system: 1 for ceiling, 1 for walls, 1 for woodwork'];
+
+  const html=`<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>Proposal ${refNo} - CWP Painting</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&family=Dancing+Script:wght@700&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'DM Sans',sans-serif;font-size:10pt;color:#1C1A17;padding:20mm 18mm;max-width:210mm;margin:0 auto;background:#fff}
+  h1{font-family:'DM Serif Display',serif;font-size:22pt;color:#1BA3A3;margin-bottom:2px}
+  h2{font-size:11pt;font-weight:700;color:#1BA3A3;margin:14px 0 5px;text-transform:uppercase;letter-spacing:0.4px;border-bottom:1.5px solid #1BA3A3;padding-bottom:3px}
+  h3{font-size:10pt;font-weight:600;color:#1C1A17;margin:10px 0 4px}
+  p{margin-bottom:5px;line-height:1.5}
+  .header{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:3px solid #1BA3A3;padding-bottom:12px;margin-bottom:16px}
+  .biz-name{font-family:'DM Serif Display',serif;font-size:24pt;color:#1BA3A3}
+  .biz-info{font-size:9pt;color:#6A6459;margin-top:4px;line-height:1.7}
+  .ref-block{text-align:right;font-size:9pt;color:#6A6459;line-height:1.8}
+  .ref-block .refno{font-size:14pt;font-weight:700;color:#1C1A17}
+  .two-col{display:flex;gap:24px;margin-bottom:14px}
+  .two-col > div{flex:1}
+  .label{font-size:8pt;font-weight:700;color:#6A6459;text-transform:uppercase;letter-spacing:0.4px;margin-bottom:2px}
+  .value{font-size:10pt;font-weight:500}
+  .value-sm{font-size:9pt;color:#6A6459;line-height:1.6}
+  table{width:100%;border-collapse:collapse;margin-bottom:10px;font-size:9.5pt}
+  th{background:#1BA3A3;color:#fff;padding:6px 8px;text-align:left;font-weight:600;font-size:9pt}
+  td{padding:6px 8px;border-bottom:1px solid #E8E4DC}
+  tr:last-child td{border-bottom:none}
+  tr:nth-child(even) td{background:#F8F6F2}
+  .price-table{margin-top:4px}
+  .price-table td{padding:5px 8px}
+  .price-table .total-row td{font-weight:700;font-size:11pt;border-top:2px solid #1BA3A3;padding-top:8px}
+  .price-table .muted{color:#6A6459}
+  .notice{background:#FEF3E2;border:1px solid #F5D28A;border-radius:6px;padding:8px 12px;font-size:9pt;color:#8B5E0A;margin:8px 0;font-weight:500}
+  .deposit-box{background:#E8F0FB;border:1px solid #B5CFF0;border-radius:6px;padding:8px 12px;font-size:9pt;color:#1A4F8A;margin:8px 0;font-weight:500}
+  .spec-list{margin:6px 0 10px 0;padding:0}
+  .spec-list li{list-style:none;padding:3px 0 3px 16px;position:relative;font-size:9.5pt}
+  .spec-list li::before{content:"*";position:absolute;left:0;color:#1BA3A3;font-weight:700}
+  .terms-body{font-size:8.5pt;line-height:1.6;color:#3A3630}
+  .terms-body p{margin-bottom:4px}
+  .terms-body h3{font-size:9pt;margin:8px 0 3px}
+  .sig-section{margin-top:20px;page-break-inside:avoid}
+  .sig-grid{display:flex;gap:30px;margin-top:10px}
+  .sig-box{flex:1;border-top:1.5px solid #1C1A17;padding-top:6px;font-size:8.5pt;color:#6A6459}
+  .page-break{page-break-before:always}
+  @media print{
+    body{padding:15mm 14mm}
+    .page-break{page-break-before:always}
+    a{color:inherit;text-decoration:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div>
+    <div class="biz-name">CWP Painting</div>
+    <div class="biz-info">ABN 16 782 306 505<br>0429 629 559 &nbsp;|&nbsp; kevin@cwppainting.com<br>https://cwppainting.com/<br>65 Matthews Ave, Orange NSW 2800</div>
+  </div>
+  <div class="ref-block">
+    <div class="refno">PROPOSAL #${refNo}</div>
+    <div>Date: ${today}</div>
+    <div>Valid until: ${validD}</div>
+    <div style="margin-top:4px;font-weight:600;color:#1BA3A3">${Q.quality==='premium'?'PREMIUM JOB':'STANDARD JOB'}</div>
+  </div>
+</div>
+
+<!-- CLIENT & JOB -->
+<div class="two-col">
+  <div>
+    <div class="label">Prepared for</div>
+    <div class="value">${Q.client||'Client Name'}</div>
+    <div class="value-sm">${[Q.phone,Q.email].filter(Boolean).join('<br>')}</div>
+  </div>
+  <div>
+    <div class="label">Job address</div>
+    <div class="value">${Q.addr||'—'}</div>
+    <div class="value-sm">${[Q.city,Q.post].filter(Boolean).join(' ')}</div>
+  </div>
+</div>
+${Q.scope||Q.desc?`<div style="background:#E4F6F6;border-radius:6px;padding:8px 12px;margin-bottom:14px;font-size:9.5pt;color:#0D6E6E"><strong>${Q.scope||''}</strong>${Q.scope&&Q.desc?' — ':''}${Q.desc||''}</div>`:''}
+
+<!-- BASE PROPOSAL -->
+<h2>Base proposal</h2>
+<p style="font-size:9.5pt;margin-bottom:8px">Painting work included in this base proposal covers labour and materials for the following items and number of coats as specified:</p>
+<ul class="spec-list">
+  ${specItems.map(s=>`<li>${s}</li>`).join('')}
+</ul>
+
+<!-- SCOPE TABLE -->
+<h2>Painting scope of works</h2>
+<table>
+  <thead><tr><th>Area / Item</th><th>What</th><th style="width:90px;text-align:center">No. of coats</th></tr></thead>
+  <tbody>${scopeRows||'<tr><td colspan="3" style="color:#9E9890;font-style:italic">No items added</td></tr>'}</tbody>
+</table>
+<p style="font-size:9pt;color:#6A6459;margin-bottom:12px">Ceilings — flat finish &nbsp;|&nbsp; Walls — low sheen &nbsp;|&nbsp; Woodwork — acrylic gloss</p>
+
+<!-- PRICING -->
+<h2>Pricing</h2>
+<table class="price-table">
+  <tr><td class="muted">Interior (rooms &amp; trim)</td><td style="text-align:right">${fmt(t.intC+t.trimC)}</td></tr>
+  <tr><td class="muted">Exterior</td><td style="text-align:right">${fmt(t.extC)}</td></tr>
+  ${t.travC>0?`<tr><td class="muted">Travel (${Q.travKm}km × 2)</td><td style="text-align:right">${fmt(t.travC)}</td></tr>`:''}
+  ${Q.disc>0?`<tr><td class="muted">Discount</td><td style="text-align:right">-${fmt(Q.disc)}</td></tr>`:''}
+  <tr><td class="muted">Subtotal (ex GST)</td><td style="text-align:right">${fmt(t.sub)}</td></tr>
+  <tr><td class="muted">GST (${R.gst}%)</td><td style="text-align:right">${fmt(t.gst)}</td></tr>
+  <tr class="total-row"><td>TOTAL</td><td style="text-align:right">${fmt(t.total)}</td></tr>
+</table>
+<div class="notice">Start date: TBC — confirmed once ${R.dep}% deposit is received</div>
+<div class="deposit-box">Deposit due to schedule project: <strong>${fmt(t.deposit)}</strong> &nbsp;|&nbsp; Balance due on completion: <strong>${fmt(t.balance)}</strong></div>
+
+<!-- TERMS -->
+<h2>Terms and conditions</h2>
+<div class="terms-body">
+<p>A deposit of ${R.dep}% of the contract amount signifies authorisation to proceed with the painting work as outlined in the scope of work. The deposit amount is due upon signing this proposal, with the balance due upon substantial completion.</p>
+<h3>1. Proposal and Scope of Works</h3>
+<p>1.1 This quotation is based strictly on the scope of works described in this document. 1.2 Any item, surface, or service not expressly included is excluded and will be treated as a variation. 1.3 This proposal is valid for ${R.valid} days from date of issue.</p>
+<h3>2. Specific Exclusions</h3>
+<p>Unless expressly included in writing, the following are excluded: all cabinets, shelves and poles; all electrical and mechanical fixtures; all floor surfaces; all exterior surfaces (where not specifically included); window cleaning, easing or repairs; any structural, carpentry, plastering, glazing or trade works not expressly included.</p>
+<h3>3. Site Access &amp; Client Responsibilities</h3>
+<p>The Client must provide safe, clear and reasonable access. Unless otherwise agreed, the Client is responsible for removing wall hangings, ornaments and valuables; ensuring the work area is clear and accessible; keeping pets out of the work area; and ensuring occupants refrain from entering the active work area during works.</p>
+<h3>4. Variations &amp; Extra Works</h3>
+<p>Any change to the agreed scope will be treated as a variation. No variation will be carried out unless approved by the Client. Variations are charged on a Time and Materials basis. Materials for variations are charged at cost plus 20%.</p>
+<h3>5. Concealed Conditions</h3>
+<p>This quotation is based on visible surface conditions only. CWP Painting is not responsible for concealed or pre-existing defects. Where concealed conditions are discovered after work commences, additional labour, preparation or materials required will be treated as a variation.</p>
+<h3>6. Standard of Work</h3>
+<p>All work will be carried out in a proper and workmanlike manner in accordance with recognised Australian industry practice and AS/NZS 2311 where relevant. A "properly painted surface" is one that, viewed under normal lighting at 1.5 metres or greater without magnification, presents a uniform appearance.</p>
+<h3>7. Payment Terms</h3>
+<p>All invoices are due and payable within 7 calendar days from the invoice date. If any invoice remains unpaid after the due date, CWP Painting reserves the right to suspend works, withhold touch-ups or return visits, and refer the outstanding amount for debt recovery.</p>
+<h3>8. Warranty</h3>
+<p>Subject to full payment, CWP Painting warrants workmanship for 2 years for non-structural defects in accordance with the NSW Home Building Act 1989. Materials are warranted for 12 months. This warranty does not cover fair wear and tear, accidental damage, damage by other trades or third parties, moisture ingress, structural movement, or manufacturer-typical weathering.</p>
+<h3>9. Insurance</h3>
+<p>CWP Painting maintains workers compensation insurance and public liability insurance appropriate to its operations. The Client is responsible for maintaining appropriate insurance over the property.</p>
+<h3>10. Limitation of Liability</h3>
+<p>To the extent permitted by law, CWP Painting's liability is limited to the reasonable cost of rectifying the affected work. Nothing in these terms is intended to exclude any non-excludable rights the Client may have under the Australian Consumer Law.</p>
+<p style="margin-top:6px;font-size:8pt;color:#9E9890">Note: For jobs exceeding $5,000 in value, CWP Painting must provide a written contract complying with NSW Home Building Act requirements, including its licence number.</p>
+</div>
+
+<!-- AGREEMENT -->
+<div class="sig-section">
+<h2>Agreement</h2>
+<p style="font-size:9.5pt;margin-bottom:10px">CWP Painting proposes to carry out the painting work as per the attached scope of work and guarantees all work will be done in a professional manner complete with a 1 year warranty.</p>
+<div class="sig-grid">
+  <div class="sig-box">
+    <strong>Contractor signature</strong><br>
+    <div style="font-family:'Dancing Script','Brush Script MT','Segoe Script',cursive;font-size:28pt;color:#1BA3A3;line-height:1.1;margin:4px 0 0 0;letter-spacing:1px">Kevin French</div>
+    <div style="border-top:1.5px solid #1C1A17;margin-top:2px;padding-top:5px;font-size:8.5pt;color:#6A6459">CWP Painting &nbsp;|&nbsp; Date: ${today}</div>
+  </div>
+  <div class="sig-box">
+    <strong>Print name</strong><br>
+    <div style="font-size:12pt;font-weight:600;color:#1C1A17;margin:14px 0 4px 0;letter-spacing:0.3px">Kevin French</div>
+    <div style="border-top:1.5px solid #1C1A17;padding-top:5px;font-size:8.5pt;color:#6A6459">CWP Painting</div>
+  </div>
+</div>
+</div>
+
+<!-- ACCEPTANCE -->
+<div class="sig-section page-break" style="page-break-before:auto;margin-top:30px">
+<h2>Acceptance</h2>
+<p style="font-size:9.5pt;margin-bottom:10px">Signature below signifies acceptance of the contract amount and authorises painting work to proceed as outlined in the painting scope. The customer signature also signifies guaranteed payment of the contract amount as outlined above. Once invoice has been received, all payments are to be made within 7 days from dated invoice.</p>
+<div class="sig-grid" style="margin-top:16px">
+  <div class="sig-box"><strong>Customer signature</strong><br><br><br>&nbsp;<br>Date: _______________</div>
+  <div class="sig-box"><strong>Print name</strong><br><br><br>&nbsp;<br>&nbsp;</div>
+  <div class="sig-box"><strong>Date</strong><br><br><br>&nbsp;<br>&nbsp;</div>
+</div>
+</div>
+
+</body>
+</html>`;
+
+  const win=window.open('','_blank');
+  win.document.write(html);
+  win.document.close();
+  win.focus();
+  setTimeout(()=>win.print(),800);
+}
+</script>
+</body>
+</html>
